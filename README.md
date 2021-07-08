@@ -6,3 +6,5 @@
 2. [Demultiplexing](datasheets/SN74LS139N_demultiplexer.pdf)
 3. [Pdf for flip-flop(storing the current state)](datasheets/SN74LS373N_flip_flop.pdf)
 4. [hex inverter for noise removal](datasheets/TC74HCU04AP_hex_inverter.pdf)
+5. [CPU-datasheet](datasheets/datasheet-2A03-TRM-CPU.pdf)
+6. [Instruction set-microcontroller](datasheets/6502%20Instruction%20Set.pdf)
