@@ -1,0 +1,45 @@
+---------memory.c---------------
+
+	memeory{
+		uint8_t ram -> give it 0xFFFF size (use malloc)
+		uint8_t vram -> givr it 0x3FFF size (use malloc)
+		uint8_t OAM -> give it 0xFF size ,i.e 256 bytes (use malloc)
+	}
+
+	for memory create function
+		---memory ram----
+			|
+			-----> read and write for 3 rams(not single because cpu dont know about types of memory available.
+					ppu register read is pending.
+			|
+			-----> create 3 read_content_memory function for 
+					debugging purpose to get the info of the 
+					3 memory maps.
+			|
+			-----> For mapping purpose, we need to subtract base address from the given addres(Do this for all the 3 memory maps).	
+
+--------- memory.h---------------
+			|
+			----->create the address of registers and base memory.				
+
+----------processor.c------------
+
+	CPU{
+		uint8_t A
+		uint8_t Y
+		uint8_t X
+		uint16_t pc
+		uint16_t sp
+		uint8_t sr
+	}
+
+	for cpu create a cpu_reset function
+	   --cpu_reset FUNCTION--
+			|
+			----->set pc to reset state(0xFFFC low , 0xFFFD high),
+			some bitwise operation are needed here.
+			|
+			----->set sr to reset(0x34 BRK,0x24 IQRB)(pending doubt uptill now).
+			|
+			----->set sp -> 0xFFFD.
+
